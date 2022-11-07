@@ -43,7 +43,7 @@ def init():
     yrot = 0.0
     ambient = (1.0, 1.0, 1.0, 1)
     prismcolor = (1, 1, 1, 1)
-    lightpos = (1.0, 1.0, 1.0)
+    lightpos = (1.0, 1.0, 1.0)  # позиция источника света
     glClearColor(0.0, 0.5451, 0.5451, 1.0)
     gluOrtho2D(-2.5, 2.5, -2.5, 2.5)
     glRotatef(-90, 1.0, 0.0, 0.0)
@@ -74,6 +74,7 @@ def TimeFunction(value):
     t += 0.01 * 2 * pi
     if t == pi:
         t = 0
+
 
 def make_sides(p):
     global n
@@ -126,7 +127,7 @@ def draw():
         for i in range(len(prisms[q])):
             for j in range(len(prisms[q][i])):
                 x = prisms[q][i][j][0]
-                y = prisms[q][i][j][1] + cos(t)
+                y = prisms[q][i][j][1] + cos(t)  # задание шейдерного эффекта
                 z = prisms[q][i][j][2]
                 glVertex3f(x, y, z)
     glEnd()
@@ -134,7 +135,7 @@ def draw():
     glutSwapBuffers()
 
 
-#сама работа OpenGL
+# сама работа OpenGL
 def main():
     glutInit(sys.argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB)
