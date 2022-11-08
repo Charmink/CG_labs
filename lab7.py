@@ -20,7 +20,7 @@ def interpol(x, t):
     return [ipl_t, x_i]
 
 
-fig = plt.figure('Лабораторная работа №7 - Хренникова Ангелина')
+fig = plt.figure('Лабораторная работа №7 - Муртазин Р.Ю.')
 ax = fig.add_subplot(211)
 a, = plt.plot(t, x, '-oy')
 cords = interpol(x, t)
@@ -92,10 +92,12 @@ def update5(val):
     cords = interpol(x, t)
     l.set_ydata(cords[1])
     a.set_ydata(x)
-    samp0.on_changed(update0)
-    samp1.on_changed(update1)
-    samp2.on_changed(update2)
-    samp3.on_changed(update3)
-    samp4.on_changed(update4)
-    samp5.on_changed(update5)
-    plt.show()
+
+
+samp0.on_changed(update0)
+samp1.on_changed(update1)
+samp2.on_changed(update2)
+samp3.on_changed(update3)
+samp4.on_changed(update4)
+samp5.on_changed(update5)
+plt.show()
